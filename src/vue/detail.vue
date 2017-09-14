@@ -10,11 +10,12 @@
         name: 'detail',
         components:{
             contentList: resolve=>{
-                setTimeout(function(){
-                    require.ensure(['./content.vue'], ()=>{
-                        resolve(require('./content.vue'));
-                    }, 'content');
-                }, 1000);
+                let _this = this;
+                require.ensure(['./content.vue'], ()=>{
+                    resolve(require('./content.vue'));
+                    console.log(this);
+                    console.log('loaded Content');
+                }, 'content');
             }
         }
     }

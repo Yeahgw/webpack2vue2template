@@ -13,4 +13,6 @@
     export default {
         name: 'content'
     }
+
+    console.log('from content');
 </script>
